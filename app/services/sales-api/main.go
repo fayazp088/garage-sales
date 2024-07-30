@@ -11,6 +11,8 @@ import (
 	"go.uber.org/zap"
 )
 
+var build = "develop"
+
 func main() {
 	log, err := logger.New("SALES-API")
 
@@ -33,7 +35,7 @@ func run(log *zap.SugaredLogger) error {
 	// -------------------------------------------------------------------------
 	// GOMAXPROCS
 
-	log.Infow("startup", "GOMAXPROCS", runtime.GOMAXPROCS(0))
+	log.Infow("startup", "GOMAXPROCS", runtime.GOMAXPROCS(0), "BUILD", build)
 
 	// -------------------------------------------------------------------------
 
