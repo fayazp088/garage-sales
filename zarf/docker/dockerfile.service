@@ -25,4 +25,4 @@ LABEL org.opencontainers.image.created="${BUILD_DATE}" \
       org.opencontainers.image.authors="Fayaz Pasha <fayazp088@gmail.com>" \
       org.opencontainers.image.source="https://github.com/fayazp088/garage-sales" \
       org.opencontainers.image.revision="${BUILD_REF}" \
-      org.opencontainers.image.vendor="Fayaz"
+      org.opencontainers.image.vendor="fayaz"
