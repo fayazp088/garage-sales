@@ -88,9 +88,14 @@ dev-describe-sales:
 # ==============================================================================
 
 run-local:
-	@go run app/services/sales-api/main.go
+	@go run app/services/sales-api/main.go  | go run app/tooling/logfmt/main.go -service=$(SERVICE_NAME)
+
+run-local-help:
+	go run app/services/sales-api/main.go --help
 
 tidy:
 	go mod tidy
 	go mod vendor
-	
+
+metrics-view-local:
+	expvarmon -ports="localhost:4000" -vars="build,requests,goroutines,errors,panics,mem:memstats.Alloc"
